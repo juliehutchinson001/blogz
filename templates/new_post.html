@@ -1,27 +1,30 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 
 {% block content %}
-    <!-- <a href = "/blog">Main blog page</a>  -->
-    <br>
     <h1 class="main_page_title"> Add a new entry</h1>
-    <br>
-    <br>
-    <br>
+
+    <h2>Add a new post:</h2>
     <form method='POST' action='/blog'>
         <label><p>Title for your new blog:</p>
-            <input type="text" name='new_post_title'/>
-        </label>
+            <input type="text" name="blog_title" />
+            </label><br/>
+        {% with messages = get_flashed_messages(with_categories=True,category_filter=["error1"]) %}
+            {% for category,message in messages %}
+                <div class="{{category}}">• {{message}}</div>
+            {% endfor %}
+        {% endwith %}
         <br/>
-        <span>{{title_error}}</span>
-        
+
         <label><p>Your new blog:</p>
-            <textarea id="post_input" name='new_post_body'></textarea>
+        <textarea name="blog_body"></textarea>
         </label>
+        {% with messages = get_flashed_messages(with_categories=True,category_filter=["error2"]) %}
+            {% for category,message in messages %}
+                <div class="{{category}}">• {{message}}</div>
+            {% endfor %}
+        {% endwith %}
         <br/>
-        <span>{{body_error}}</span>
-        <br/>
-        <br/>
-        <input type="submit" value='Add Entry' />
+        <input type="submit" value="Add Entry" />
     </form>
 
 {% endblock %}

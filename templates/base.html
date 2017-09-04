@@ -2,29 +2,27 @@
 <html>
     <head>
         <title>{{base_title}}</title>
-        <style>
-            span{
-                color: red;
-                font-family: 'VT323', monospace;
-                font-size: 20px;
-            }
-            .main_page_title{
-                text-align: center;
-            }
-            #post_input {
-                width: 300px;
-                height: 120px;
-            }
-        </style>
+        <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}"/>
     </head>
     <body>
-        <!-- <nav> -->
-            <a class='link' href="/blog">Main Blog</a> 
-            <a class='link' href="/new_post">Add a Post</a>
-        <!-- </nav> -->
-        <!-- <h1 class='header'>{{ header }}</h1> -->
-        <!-- <hr/> -->
-        {% block content %}
+        <nav>
+            <ul id="user-account">
+                <li><a class='link' href="/login">Login</a></li>
+                <li><a class='link' href="/logout">Logout</a></li>
+            </ul>
+            <ul>
+                <li><a class='link' href="/">Home</a></li>
+                <li><a class='link' href="/blog">Posts</a></li>
+                <li><a class='link' href="/new_post">New_Post</a></li>
+            </ul>
+        </nav>
+        <main>
+        {% block content %} 
         {% endblock %}
+        </main>
+
+        <footer>
+            <p>© 2017 Julie Hutchinson</p>
+        </footer>
     </body>
 </html>
