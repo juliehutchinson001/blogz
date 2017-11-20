@@ -1,6 +1,7 @@
 from flask import Flask, session, request, redirect, render_template, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import pdb
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '<owiejfnvojfoe8jmm>'
@@ -112,8 +113,31 @@ def signup():
         return render_template('signup.html', 
                                 title="JHblogz - Signup")
 
-@app.route('/blog')
+@app.route('/blog', methods=["POST", "GET"])
 def blog():
+    if request.method == "POST":
+        blog_title = request.form['blog_title']
+        blog_body = request.form['blog_body']
+        # owner = owner = User.query.filter_by(username=session["username"]).first()
+        owner = User.query.filter_by(username=session["username"]).first()
+        # pdb.set_trace()
+        
+        if blog_title and blog_body:
+            new_blog = Blog(blog_title, blog_body, owner)
+            db.session.add(new_blog)
+            db.session.commit()
+            blog_id = str(new_blog.id)
+            return redirect('/blog?id='+ blog_id)
+
+        if not blog_title:
+            flash("Please enter a blog title.", "error1")
+        if not blog_body:
+            flash("Please enter a blog body.", "error2")
+        return redirect('/new_post')
+
+
+
+
     blogs = Blog.query.order_by(Blog.date.desc()).all()
     users = User.query.all()
 
@@ -145,11 +169,14 @@ def blog():
 
 @app.route('/new_post', methods=["POST", "GET"])
 def new_post():
+    # pdb.set_trace()
     if request.method == "POST":
         blog_title = request.form['blog_title']
         blog_body = request.form['blog_body']
         # owner = owner = User.query.filter_by(username=session["username"]).first()
         owner = User.query.filter_by(username=session["username"]).first()
+        pdb.set_trace()
+        
         if blog_title and blog_body:
             new_blog = Blog(blog_title, blog_body, owner)
             db.session.add(new_blog)
