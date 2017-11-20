@@ -26,7 +26,8 @@ class Blog(db.Model):
         self.date = date
 
     def __repr__(self):
-        return '<Blog %r>' % self.title
+        # return '<Blog %r>' % self.title
+        return '<Blog {!r}>'.format(self.title)
 
 
 class User(db.Model):
@@ -147,7 +148,8 @@ def new_post():
     if request.method == "POST":
         blog_title = request.form['blog_title']
         blog_body = request.form['blog_body']
-        owner = owner = User.query.filter_by(username=session["username"]).first()
+        # owner = owner = User.query.filter_by(username=session["username"]).first()
+        owner = User.query.filter_by(username=session["username"]).first()
         if blog_title and blog_body:
             new_blog = Blog(blog_title, blog_body, owner)
             db.session.add(new_blog)
