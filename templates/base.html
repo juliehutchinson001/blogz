@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{{base_title}}</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}"/>
-    </head>
-    <body>
-        <nav>
-            <ul id="user-account">
-                <li><a class='link' href="/login">Login</a></li>
-                <li><a class='link' href="/logout">Logout</a></li>
-            </ul>
-            <ul>
-                <li><a class='link' href="/">Home</a></li>
-                <li><a class='link' href="/blog">Posts</a></li>
-                <li><a class='link' href="/new_post">New_Post</a></li>
-            </ul>
-        </nav>
+
+<head>
+    <title>{{base_title}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}" />
+</head>
+
+<body>
+    <div id="user-menu" class="padding-user-menu">
+        <div class="padding-margin">
+            <nav class="float-right">
+                <nav id="user-account">
+                    <a class='link-right' href="/login">Login</a>
+                    <a class='link-right' href="/logout">Logout</a>
+                </nav>
+                <nav id="user-actions">
+                    <a class='link' href="/">Home</a>
+                    <a class='link' href="/blog">Posts</a>
+                    <a class='link' href="/new_post">New_Post</a>
+                </nav>
+            </nav>
+        </div>
         <main>
-        {% block content %} 
-        {% endblock %}
+            <div class="container">
+                {% block content %} {% endblock %}
+            </div>
         </main>
 
         <footer>
             <p>© 2017 Julie Hutchinson</p>
         </footer>
-    </body>
+    </div>
+</body>
+
 </html>
