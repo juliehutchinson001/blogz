@@ -1,15 +1,28 @@
 {% extends "base.html" %} {% block content %}
 <h1 class="title">Blog Posts</h1>
 <table>
+    <tr>
+        <th>Linked Title</th>
+        <th>Blog Body</th>
+        <th>Written By</th>
+        <th>Date</th>
+    </tr>
     {% for blog in blogs %}
-    <li><a class='link' href="/blog?id={{blog.id}}">{{blog.title}}</a></li>
-    <p>{{ blog.body }}</p>
-    <hr> {% for name in users %} {% if name.id == blog.owner_id %}
-    <br/>
-    <li>
-        <p class="post-author">written by: <a href="/blog?user={{name.username}}">{{name.username}}</a> @ {{blog.date}}</p>
-    </li>
-    <hr /> {% endif %} {% endfor %} {% endfor %}
+
+    <tr>
+        <th><a class='link' href="/blog?id={{blog.id}}">{{blog.title}}</a></th>
+        <th>
+            <p>{{ blog.body }}</p>
+        </th>
+        {% for name in users %} {% if name.id == blog.owner_id %}
+        <th>
+            <p>written by: <a href="/blog?user={{name.username}}">{{name.username}}</a></p>
+        </th>
+        <th>
+            <p> @ {{blog.date}}</p>
+        </th>
+    </tr>
+    {% endif %} {% endfor %} {% endfor %}
 </table>
 
 {% endblock %}
