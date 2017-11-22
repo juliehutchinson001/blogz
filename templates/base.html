@@ -7,28 +7,30 @@
 </head>
 
 <body>
-    <div id="user-menu" class="padding-user-menu">
-        <div class="padding-margin">
-            <nav class="float-right">
-                <nav id="user-account">
-                    <a class='link-right' href="/login">Login</a>
-                    <a class='link-right' href="/logout">Logout</a>
-                </nav>
-                <nav id="user-actions">
-                    <a class='link' href="/">Home</a>
-                    <a class='link' href="/blog">Posts</a>
-                    <a class='link' href="/new_post">New_Post</a>
-                </nav>
+    <div id="body-content">
+        <div id="header">
+            <nav id="floating-bar">
+                <ul id="user-account">
+                    <li><a class='link-right' href="/login">Login</a></li>
+                    <li><a class='link-right' href="/logout">Logout</a></li>
+                </ul>
+                <ul id="user-actions">
+                    <li><a class='link-left' href="/">Home</a></li>
+                    <li><a class='link-left' href="/blog">Posts</a></li>
+                    <li><a class='link-left' href="/new_post">New_Post</a></li>
+                </ul>
             </nav>
         </div>
         <main>
-            <div class="container">
+            <div id="padding-main">
                 {% block content %} {% endblock %}
             </div>
         </main>
 
         <footer>
-            <p>© 2017 Julie Hutchinson</p>
+            <div id="footer">
+                <p>© 2017 Julie Hutchinson</p>
+            </div>
         </footer>
     </div>
 </body>
