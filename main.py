@@ -69,12 +69,12 @@ def login():
         if users.count() == 1:
             user = users.first()
             if password != user.password:
-                flash('bad password', 'error2')
+                flash('Wrong password', 'error2')
                 return redirect("/login")
             elif password == user.password:
                 session['username'] = user.username
                 return redirect("/new_post")
-        flash('bad username', 'error1')
+        flash('Wrong username', 'error1')
         return redirect("/login")
 
 @app.route('/logout')
