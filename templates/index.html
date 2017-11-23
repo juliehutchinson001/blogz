@@ -1,14 +1,13 @@
-{% extends "base.html" %} 
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
+<div class="block-margin-template">
     <h1 class="title">Home</h1>
-    <div>
+    <div class="form-template">
         <ul>
-        {% for user in users %}
-        <li><a href="/blog?user={{user.username}}">{{user.username}}</a></li>
-        <br />
-        <br />
-        {% endfor %}
+            {% for user in users %}
+            <li><a href="/blog?user={{user.username}}">{{user.username}}</a></li>
+            <br />
+            <br /> {% endfor %}
         </ul>
     </div>
+</div>
 {% endblock %}
