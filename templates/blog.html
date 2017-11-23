@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block content %}
 <h1 class="title">Blog Posts</h1>
 <table>
-    <tr>
-        <th>Linked Title</th>
-        <th>Blog Body</th>
-        <th>Written By</th>
-        <th>Date</th>
+    <tr class="table-head">
+        <th class="table-head">Linked Title</th>
+        <th class="table-head">Blog Body</th>
+        <th class="table-head">Written By</th>
+        <th class="table-head">Date</th>
     </tr>
     {% for blog in blogs %}
 
@@ -16,7 +16,7 @@
         </th>
         {% for name in users %} {% if name.id == blog.owner_id %}
         <th>
-            <p>written by: <a href="/blog?user={{name.username}}">{{name.username}}</a></p>
+            <p><a class="link" href="/blog?user={{name.username}}">{{name.username}}</a></p>
         </th>
         <th>
             <p> @ {{blog.date}}</p>
