@@ -1,7 +1,8 @@
 html {
     min-height: 100%;
     width: 100%;
-    background-color: rgb(47, 43, 43);
+    height: 100%;
+    background-color: #C4E7D4;
     display: block;
     position: relative;
     font-family: sans-serif;
@@ -12,33 +13,34 @@ html {
 #header {
     display: block;
     box-sizing: content-box;
-    display: block;
-    width: 100%;
+    left: 0;
     top: 0;
-    background-color: rgb(19, 146, 136);
+    background-color: #5A5056;
     align-items: baseline;
     box-sizing: content-box;
-    padding: 14px 16px;
+    padding: 10px;
     position: absolute;
-    max-width: 100%;
-    border: 5px solid rgb(33, 195, 174);
+    /* position: sticky; */
+    width: 100%;
+    border: 5px solid #5A5056;
     box-shadow: 2px 4px 10px 4px rgb(102, 153, 153);
 }
 
 .link {
-    color: white;
-    font-size: 16px;
+    color: rgb(58, 82, 85);
+    font-size: 20px;
 }
 
 .title {
     padding: 18px 24px;
-    color: rgba(255, 255, 255, 0.89);
+    color: rgba(85, 80, 80, 0.89);
     font-weight: bolder;
     text-transform: capitalize;
     text-align: center;
 }
 
 body {
+    margin: 25px 50px;
     text-decoration-color: white;
     display: inline-block;
     font-size: 14px;
@@ -46,20 +48,17 @@ body {
     line-height: 22.4px;
     min-height: 550px;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0 0 100px;
     padding: 25px;
 }
 
 main {
     display: inline-block;
-    padding-block-start: 16px;
-    position: absolute;
-    width: 100%;
+    position: relative;
+    width: 70%;
     align-content: center;
     align-items: center;
     top: 50px;
     box-sizing: border-box;
-    width: 100%;
 }
 
 #padding-main {
@@ -67,7 +66,7 @@ main {
     position: relative;
     align-content: center;
     padding: 18px 24px;
-    color: rgb(80, 174, 190);
+    color: #242023;
 }
 
 nav ul {
@@ -92,36 +91,50 @@ nav.link-right {
     border-width: 1px;
     margin-right: 1ch !important;
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
     vertical-align: baseline;
     float: right !important;
 }
 
-.link-right,
-.link-left {
+.link-right {
     border: 1px solid rgb(4, 22, 22);
-    background-color: rgb(4, 22, 22);
+    background-color: #C4DACF;
     font-weight: bold;
     font-size: 20px;
     text-decoration-color: white;
     text-decoration-line: none;
     text-decoration-style: none;
-    color: white;
+    display: inline-flex;
+    float: right;
+    color: #1B181A;
+}
+
+.link-left {
+    border: 1px solid rgb(4, 22, 22);
+    background-color: #C4DACF;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration-color: white;
+    text-decoration-line: none;
+    text-decoration-style: none;
+    display: inline-flex;
+    align-items: flex-start;
+    color: #1B181A;
 }
 
 nav.link-left {
     color: rgb(8, 35, 39);
-    /* border-block-start-style: 10px; */
-    display: flex;
+    display: inline-flex;
     float: left !important;
     flex-direction: row;
+    align-items: flex-start;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
     height: 72px;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     line-height: 22.4px;
     padding-bottom: 12px;
     padding-left: 12px;
@@ -131,6 +144,33 @@ nav.link-left {
     padding-top: 12px;
     text-decoration: none;
     vertical-align: baseline;
+}
+
+.table-head {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+th,
+td {
+    text-align: justify;
+    padding: 15px;
+}
+
+table,
+th,
+td {
+    border: 2px solid #242023;
+}
+
+.block-margin-template {
+    display: inline;
+}
+
+.form-template {
+    display: inline-block;
+    padding: 0px 0px;
 }
 
 #footer {
@@ -143,10 +183,10 @@ nav.link-left {
     width: 100%;
     box-sizing: content-box;
     display: block;
-    background-color: rgb(19, 146, 136);
-    border: 5px solid rgb(33, 195, 174);
-    box-shadow: 2px 4px 10px 4px rgb(102, 153, 153);
-    color: rgb(27, 29, 28);
+    background-color: #5A5056;
+    border: 5px solid #5A5056;
+    box-shadow: 10px 4px 10px 4px rgb(102, 153, 153);
+    color: rgb(200, 206, 203);
     font-weight: bold;
     font-size: 20px;
 }
