@@ -1,16 +1,14 @@
 html {
-    min-height: 100%;
     width: 100%;
     height: 100%;
     background-color: #C4E7D4;
     display: block;
-    position: relative;
+    position: fixed;
     font-family: sans-serif;
     box-sizing: border-box;
-    font-size: 16px;
 }
 
-#header {
+div#header {
     display: block;
     box-sizing: content-box;
     left: 0;
@@ -18,7 +16,6 @@ html {
     background-color: #5A5056;
     align-items: baseline;
     box-sizing: content-box;
-    padding: 10px;
     position: absolute;
     /* position: sticky; */
     width: 100%;
@@ -39,40 +36,46 @@ html {
     text-align: center;
 }
 
+div#body-content{
+    width: 100%;
+    height: 100%;
+    display: block;
+    align-content: center;
+
+}
+
 body {
-    margin: 25px 820px 50px 820px;
-    text-decoration-color: white;
-    display: inline-block;
-    font-size: 14px;
-    font-stretch: 100%;
-    line-height: 22.4px;
-    min-height: 550px;
+    width: 100%;
+    height: 100%;
+    display: block;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 25px;
 }
 
 main {
-    display: inline-block;
-    position: relative;
-    width: 70%;
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 50%;
     align-content: center;
     align-items: center;
-    top: 50px;
-    box-sizing: border-box;
+    top: 160px;
+    bottom: 149px;
+    box-sizing: content-box;
 }
 
 #padding-main {
-    display: block;
-    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: 80px;
+    bottom: 100px;
+    left: 117px;
+    right: 9px;
+    position: fixed;
     align-content: center;
+    justify-content: center;
     padding: 18px 24px;
     color: #242023;
-}
-
-nav ul {
-    padding: 0;
-    display: inline-block;
-    list-style-type: none;
 }
 
 nav ul li {
@@ -130,6 +133,7 @@ nav.link-left {
     float: left !important;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: flex-end;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
