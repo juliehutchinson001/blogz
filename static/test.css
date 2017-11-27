@@ -50,11 +50,14 @@ body {
 main {
     display: block;
     position: fixed;
-    width: 901px;
-    height: 350px;
-    top: 150px;
-    bottom: 135px;
+    width: 883px;
+    height: 450px;
+    top: 100px;
     box-sizing: content-box;
+}
+
+h2, h3{
+    color: rgb(48, 28, 41);
 }
 
 #padding-main {
@@ -89,7 +92,7 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 2px 16px;
+    padding: 14px 16px;
     text-decoration: none;
 }
 
