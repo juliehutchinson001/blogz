@@ -17,7 +17,6 @@ div#header {
     align-items: baseline;
     box-sizing: content-box;
     position: absolute;
-    /* position: sticky; */
     width: 100%;
     border: 5px solid #5A5056;
     box-shadow: 2px 4px 10px 4px rgb(102, 153, 153);
@@ -29,7 +28,6 @@ div#header {
 }
 
 .title {
-    padding: 18px 24px;
     color: rgba(85, 80, 80, 0.89);
     font-weight: bolder;
     text-transform: capitalize;
@@ -38,10 +36,8 @@ div#header {
 
 div#body-content{
     width: 100%;
-    height: 100%;
+    height: 620px;
     display: block;
-    align-content: center;
-
 }
 
 body {
@@ -54,12 +50,10 @@ body {
 main {
     display: block;
     position: fixed;
-    width: 100%;
-    height: 50%;
-    align-content: center;
-    align-items: center;
-    top: 160px;
-    bottom: 149px;
+    width: 901px;
+    height: 350px;
+    top: 150px;
+    bottom: 135px;
     box-sizing: content-box;
 }
 
@@ -78,76 +72,33 @@ main {
     color: #242023;
 }
 
-nav ul li {
-    list-style: none;
-    display: inline-block;
-    margin-right: 15px;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #5A5056;
+    border: 5px solid #5A5056;
 }
 
-nav ul li a {
-    padding: 5px 10px;
+li {
+    float: left;
 }
 
-nav.link-right {
-    color: rgb(8, 35, 39);
+li a {
+    display: block;
+    color: white;
     text-align: center;
-    border-width: 1px;
-    margin-right: 1ch !important;
+    padding: 2px 16px;
     text-decoration: none;
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    vertical-align: baseline;
-    float: right !important;
 }
 
-.link-right {
-    border: 1px solid rgb(4, 22, 22);
-    background-color: #C4DACF;
-    font-weight: bold;
-    font-size: 20px;
-    text-decoration-color: white;
-    text-decoration-line: none;
-    text-decoration-style: none;
-    display: inline-flex;
-    float: right;
-    color: #1B181A;
+li a:hover:not(.active) {
+    background-color: rgb(48, 28, 41);
 }
 
-.link-left {
-    border: 1px solid rgb(4, 22, 22);
-    background-color: #C4DACF;
-    font-weight: bold;
-    font-size: 20px;
-    text-decoration-color: white;
-    text-decoration-line: none;
-    text-decoration-style: none;
-    display: inline-flex;
-    align-items: flex-start;
-    color: #1B181A;
-}
-
-nav.link-left {
-    color: rgb(8, 35, 39);
-    display: inline-flex;
-    float: left !important;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-end;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    height: 72px;
-    /* justify-content: flex-start; */
-    line-height: 22.4px;
-    padding-bottom: 12px;
-    padding-left: 12px;
-    padding-right: 12px;
-    box-sizing: border-box;
-    align-items: center;
-    padding-top: 12px;
-    text-decoration: none;
-    vertical-align: baseline;
+.active {
+    background-color: rgb(95, 141, 143);
 }
 
 .table-head {
@@ -180,10 +131,8 @@ td {
 #footer {
     position: absolute;
     left: 0;
-    margin-bottom: 0;
     bottom: 0;
-    padding: 10px;
-    height: 100px;
+    height: 10%;
     width: 100%;
     box-sizing: content-box;
     display: block;
