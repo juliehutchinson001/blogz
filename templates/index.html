@@ -1,10 +1,10 @@
 {% extends "base.html" %} {% block content %}
 <div class="block-margin-template">
     <h1 class="title">Home</h1>
-    <div class="form-template">
+    <div id="users-created">
         <ul>
             {% for user in users %}
-            <li><a href="/blog?user={{user.username}}">{{user.username}}</a></li>
+            <li style="float:left" ><a style="color: rgb(103, 54, 238)" href="/blog?user={{user.username}}">{{user.username}}</a></li>
             <br />
             <br /> {% endfor %}
         </ul>
