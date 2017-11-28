@@ -4,25 +4,26 @@
 <div id="parent">
     <div id="form_login">
             <h2>Create New Account</h2>
-            <form action="/signup" method="post">
-              <h3><label>Username <input type="text" name="username"/></label></h3>
+            <br>
+            <form class="body-form" action="/signup" method="post">
+              <h3><label>Username <br><input type="text" name="username" placeholder="New Username"/></label></h3>
               {% with messages = get_flashed_messages(with_categories=True,category_filter=["username_error","user_taken"]) %}
               {% for category,message in messages %}
-                  <div class="{{category}}">• {{message}}</div>
+                  <div class="category">{{message}}</div>
               {% endfor %}
               {% endwith %}
-
-              <h3><label>New Password <input type="password" name="password"/></label></h3>
+                <br>
+              <h3><label>New Password <br><input type="password" name="password" placeholder="New Password"/></label></h3>
               {% with messages = get_flashed_messages(with_categories=True,category_filter=["password_error"]) %}
               {% for category,message in messages %}
-                  <div class="{{category}}">• {{message}}</div>
+                  <div class="category">{{message}}</div>
               {% endfor %}
               {% endwith %}
-
-              <h3><label>Verify Password <input type="password" name="verify"/></label></h3>
+                <br>
+              <h3><label>Verify Password <br><input type="password" name="verify" placeholder="Verify New Password"/></label></h3>
               {% with messages = get_flashed_messages(with_categories=True,category_filter=["verify_error"]) %}
               {% for category,message in messages %}
-                  <div class="{{category}}">• {{message}}</div>
+                  <div class="category">{{message}}</div>
               {% endfor %}
               {% endwith %}
       
