@@ -1,4 +1,4 @@
-![Blogz](blogz_main.png)
+![Blogz](blogz_main1.png)
 
 ## Project Overview
 Blog site built using HTML, CSS, Javascript, Python/Flask as the server and MYSQL for the database.
