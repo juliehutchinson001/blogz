@@ -2,15 +2,16 @@
 <div class="block-margin-template">
     <h2 class="title">Login</h2>
     <div class="form-template">
-        <form action="/login" method="post">
-            <h3><label>Username <input type="text" name="username"/></label></h3>
+        <form class="body-form" action="/login" method="post">
+            <input type="text" name="username" placeholder="Username"/>
             {% with messages = get_flashed_messages(with_categories=True,category_filter=["error1"]) %} {% for category,message in messages %}
-            <div class="category">• {{message}}</div>
+            <div class="category">{{message}}</div>
             {% endfor %} {% endwith %}
-
-            <h3><label>Password <input type="password" name="password"/></label></h3>
+            <br>
+            <br>
+            <input type="password" name="password" placeholder="Password"/>
             {% with messages = get_flashed_messages(with_categories=True,category_filter=["error2"]) %} {% for category,message in messages %}
-            <div class="category">• {{message}}</div>
+            <div class="category">{{message}}</div>
             {% endfor %} {% endwith %}
             <p><input type="submit" value="Login" /></p>
         </form>
