@@ -14,7 +14,6 @@ div#header {
     left: 0;
     top: 0;
     background-color: #5A5056;
-    align-items: baseline;
     box-sizing: content-box;
     position: absolute;
     width: 100%;
@@ -23,15 +22,25 @@ div#header {
 }
 
 .link {
-    color: rgb(58, 82, 85);
+    color: rgb(65, 153, 163);
     font-size: 20px;
+}
+
+.block-margin-template{
+    position: relative;
+    float: right;
+    margin-top: 50px;
+    width: 80%;
+    height: 400px;
+    margin-bottom: 10px;
 }
 
 .title {
     color: rgba(85, 80, 80, 0.89);
     font-weight: bolder;
     text-transform: capitalize;
-    text-align: center;
+    text-align: left;
+    left: 20px;
 }
 
 div#body-content{
@@ -47,6 +56,34 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+div.category{
+    color: rgb(167, 70, 126);
+    animation-duration: 2400ms;
+    animation: normal;
+}
+
+input[type=text], input[type=password] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid rgb(87, 86, 86);    
+}
+
+input[type=password]:focus, textarea:focus, input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+input[type=submit]{
+    border: 1px;
+}
+
+div#users-created ul{
+    float: left;
+    color: rgb(29, 7, 29);
+    background-color: rgb(231, 196, 229);
+}
+
 main {
     display: block;
     position: fixed;
@@ -58,12 +95,14 @@ main {
 
 h2, h3{
     color: rgb(48, 28, 41);
+    padding: 0px;
+    margin: 0px;
 }
 
-#padding-main {
+div#padding-main {
     display: inline-block;
     width: 100%;
-    height: 100%;
+    height: 70%;
     top: 80px;
     bottom: 100px;
     left: 117px;
@@ -71,7 +110,6 @@ h2, h3{
     position: fixed;
     align-content: center;
     justify-content: center;
-    padding: 18px 24px;
     color: #242023;
 }
 
@@ -90,7 +128,7 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -116,19 +154,33 @@ td {
     padding: 15px;
 }
 
-table,
+tr:hover {
+    background-color: #5A5056;
+    color: whitesmoke;
+}
+
 th,
 td {
-    border: 2px solid #242023;
+    border-bottom: 2px solid #5A5056;    
 }
 
-.block-margin-template {
-    display: inline;
-}
+textarea {
+    border: 1px solid rgb(87, 86, 86);
+    width: 40%;
+    height: 120px;
+    /* padding: 12px 20px; */
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  }
 
 .form-template {
-    display: inline-block;
-    padding: 0px 0px;
+    width: 70%;
+    height: 70%;
+    float: left;
+    position: relative;
 }
 
 #footer {
@@ -140,7 +192,7 @@ td {
     box-sizing: content-box;
     display: block;
     background-color: #5A5056;
-    border: 5px solid #5A5056;
+    border: 5px solid rgb(194, 169, 184);
     box-shadow: 10px 4px 10px 4px rgb(102, 153, 153);
     color: rgb(200, 206, 203);
     font-weight: bold;
