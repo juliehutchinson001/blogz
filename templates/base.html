@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{base_title}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}" />
+</head>
+
+<body>
+    <div id="body-content">
+        <div id="header">
+            <nav id="floating-bar">
+                <ul>
+                    <li style="float:right"><a href="/login">Login</a></li>
+                    <li style="float:right"><a href="/logout">Logout</a></li>
+                    <li style="float:left"><a href="/">Home</a></li>
+                    <li style="float:left"><a href="/blog">Posts</a></li>
+                    <li style="float:left"><a href="/new_post">New Post</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+            <div id="padding-main">
+                {% block content %} {% endblock %}
+            </div>
+        </main>
+
+        <footer>
+            <div id="footer">
+                <p>© 2017 Julie Hutchinson</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
